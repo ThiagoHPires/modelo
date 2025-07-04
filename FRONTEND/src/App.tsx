@@ -3,9 +3,10 @@ import { Toaster as Sonner } from "@/componentes/ui/sonner";
 import { TooltipProvider } from "@/componentes/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { ProvedorAutenticacao } from "@/contextos/ContextoAutenticacao"; // Caminho corrigido
-import PaginaInicial from "./paginas/PaginaInicial"; // Caminho corrigido
-import PaginaNaoEncontrada from "./paginas/PaginaNaoEncontrada"; // Caminho corrigido
+import { ProvedorAutenticacao } from "@/contextos/ContextoAutenticacao";
+import PaginaInicial from "./paginas/PaginaInicial";
+import PaginaNaoEncontrada from "./paginas/PaginaNaoEncontrada";
+import PaginaCadastro from "./paginas/PaginaCadastro"; // 1. IMPORTE A NOVA PÁGINA
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<PaginaInicial />} />
             <Route path="/dashboard" element={<PaginaInicial />} />
+            <Route path="/cadastro" element={<PaginaCadastro />} /> {/* 2. ADICIONE A ROTA */}
             <Route path="*" element={<PaginaNaoEncontrada />} />
           </Routes>
         </BrowserRouter>

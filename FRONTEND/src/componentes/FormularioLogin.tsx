@@ -5,7 +5,8 @@ import { Label } from '@/componentes/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/componentes/ui/card';
 import { useAutenticacao } from '@/contextos/ContextoAutenticacao';
 import { useToast } from '@/hooks/use-toast';
-import logo from '@/assets/LOGO ALPHA CONVITES VERTICAL PRETO E VERMELHO.png'; // 1. IMPORTE A SUA LOGO AQUI
+import logo from '@/assets/LOGO ALPHA CONVITES VERTICAL PRETO E VERMELHO.png';
+import { Link } from 'react-router-dom';
 
 const FormularioLogin = () => {
   const [email, setEmail] = useState('');
@@ -41,7 +42,6 @@ const FormularioLogin = () => {
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
           <img src={logo} alt="ALPHA KONECT Logo" className="mx-auto h-20 w-auto mb-4" />
-
           <h1 className="text-3xl font-bold text-agency-black">ALPHA KONECT</h1>
           <p className="text-gray-600">Sistema de Gestão de Formaturas</p>
         </div>
@@ -87,6 +87,13 @@ const FormularioLogin = () => {
                 {enviando ? 'Entrando...' : 'Entrar'}
               </Button>
             </form>
+
+            <div className="mt-4 text-center text-sm">
+              Não tem uma conta?{' '}
+              <Link to="/cadastro" className="underline text-agency-red hover:text-red-700">
+                Cadastre-se
+              </Link>
+            </div>
 
             <div className="mt-6 p-4 bg-gray-50 rounded-lg">
               <h3 className="font-semibold text-sm mb-2">Contas de Demonstração:</h3>
