@@ -103,16 +103,6 @@ const FormularioLogin = () => {
                 Cadastre-se
               </Link>
             </div>
-
-            <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-              <h3 className="font-semibold text-sm mb-2">Contas de Demonstração:</h3>
-              <div className="space-y-1 text-xs text-gray-600">
-                <div><strong>Cliente:</strong> cliente@email.com</div>
-                <div><strong>Funcionário:</strong> funcionario@email.com</div>
-                <div><strong>Gerente:</strong> gerente@email.com</div>
-                <div className="mt-1"><strong>Senha:</strong> 123456</div>
-              </div>
-            </div>
           </CardContent>
         </Card>
       </div>
