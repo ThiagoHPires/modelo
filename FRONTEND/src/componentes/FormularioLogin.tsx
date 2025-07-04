@@ -79,6 +79,15 @@ const FormularioLogin = () => {
                   className="h-11"
                 />
               </div>
+
+              {/* --- CÓDIGO ADICIONADO AQUI --- */}
+              <div className="flex justify-end text-sm">
+                <Link to="/recuperar-senha" className="underline text-gray-600 hover:text-agency-red">
+                  Esqueci minha senha
+                </Link>
+              </div>
+              {/* --- FIM DO CÓDIGO ADICIONADO --- */}
+
               <Button 
                 type="submit" 
                 className="w-full h-11 bg-agency-red hover:bg-red-700 text-white"
