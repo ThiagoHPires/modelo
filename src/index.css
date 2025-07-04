@@ -1,0 +1,101 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 0 79% 41%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 0 79% 41%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 0 79% 41%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 13% 18%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 79% 41%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 13% 28%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 220 13% 28%;
+    --sidebar-ring: 0 79% 41%;
+
+    /* Custom agency colors */
+    --agency-red: 0 79% 41%;
+    --agency-black: 220 13% 18%;
+    --agency-white: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 220 13% 18%;
+    --foreground: 0 0% 98%;
+    --card: 220 13% 18%;
+    --card-foreground: 0 0% 98%;
+    --popover: 220 13% 18%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 79% 41%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 220 13% 28%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 220 13% 28%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 220 13% 28%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 28%;
+    --input: 220 13% 28%;
+    --ring: 0 79% 41%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .text-agency-red {
+    color: hsl(var(--agency-red));
+  }
+  .bg-agency-red {
+    background-color: hsl(var(--agency-red));
+  }
+  .text-agency-black {
+    color: hsl(var(--agency-black));
+  }
+  .bg-agency-black {
+    background-color: hsl(var(--agency-black));
+  }
+  .border-agency-red {
+    border-color: hsl(var(--agency-red));
+  }
+}
