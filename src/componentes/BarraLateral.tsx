@@ -26,6 +26,7 @@ import { Button } from '@/componentes/ui/button';
 // Importações corrigidas com os nomes em português
 import { useAutenticacao, PapelUsuario } from '@/contextos/ContextoAutenticacao'; 
 import { cn } from '@/lib/utils';
+import logo from '@/assets/LOGO ALPHA CONVITES VERTICAL PRETO E VERMELHO.png';
 
 // Interface traduzida
 interface ItemMenu {
@@ -115,12 +116,12 @@ export const BarraLateral = () => {
     <Sidebar className="border-r border-gray-200">
       <SidebarHeader className="border-b border-gray-200 p-4">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 bg-agency-red rounded-full flex items-center justify-center flex-shrink-0">
-            <span className="text-white text-sm font-bold">🎓</span>
+          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center flex-shrink-0">
+            <img src={logo} alt="ALPHA KONECT Logo" className="mx-auto h-8 w-auto mb1" />
           </div>
           {!estaRecolhida && (
             <div className="min-w-0">
-              <h2 className="font-bold text-agency-black truncate">AgênciaForm</h2>
+              <h2 className="font-bold text-agency-black truncate">ALPHA KONECT</h2>
               <p className="text-xs text-gray-500 truncate">Sistema de Formaturas</p>
             </div>
           )}

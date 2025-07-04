@@ -1,14 +1,13 @@
-
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/componentes/ui/card';
 import { Badge } from '@/componentes/ui/badge';
 import { Button } from '@/componentes/ui/button';
-import { useAuth, UserRole } from '@/contextos/ContextoAutenticacao';
-import { 
-  FileText, 
-  MessageSquare, 
-  Users, 
-  Calendar, 
+import { useAutenticacao, PapelUsuario } from '@/contextos/ContextoAutenticacao'; // Correção na importação
+import {
+  FileText,
+  MessageSquare,
+  Users,
+  Calendar,
   TrendingUp,
   Clock,
   CheckCircle,
@@ -23,10 +22,10 @@ interface DashboardCardProps {
   variant?: 'default' | 'success' | 'warning' | 'danger';
 }
 
-const DashboardCard: React.FC<DashboardCardProps> = ({ 
-  title, 
-  value, 
-  description, 
+const DashboardCard: React.FC<DashboardCardProps> = ({
+  title,
+  value,
+  description,
   icon: Icon,
   variant = 'default'
 }) => {
@@ -366,12 +365,12 @@ const GerenteDashboard = () => (
   </div>
 );
 
-const Dashboard = () => {
-  const { user } = useAuth();
+const PainelControle = () => { // Nome do componente corrigido para corresponder à exportação
+  const { usuario } = useAutenticacao(); // Correção: useAutenticacao retorna 'usuario'
 
-  if (!user) return null;
+  if (!usuario) return null;
 
-  const getDashboardByRole = (role: UserRole) => {
+  const getDashboardByRole = (role: PapelUsuario) => { // Correção: tipo PapelUsuario
     switch (role) {
       case 'cliente':
         return <ClienteDashboard />;
@@ -384,7 +383,7 @@ const Dashboard = () => {
     }
   };
 
-  const getWelcomeMessage = (role: UserRole) => {
+  const getWelcomeMessage = (role: PapelUsuario) => { // Correção: tipo PapelUsuario
     const messages = {
       cliente: 'Acompanhe seus pedidos e mantenha-se atualizado sobre suas formaturas.',
       funcionario: 'Gerencie suas tarefas e acompanhe o progresso dos projetos.',
@@ -397,16 +396,16 @@ const Dashboard = () => {
     <div className="space-y-6">
       <div>
         <h1 className="text-3xl font-bold text-agency-black">
-          Olá, {user.name}! 👋
+          Olá, {usuario.nome}! 👋 
         </h1>
         <p className="text-gray-600 mt-1">
-          {getWelcomeMessage(user.role)}
+          {getWelcomeMessage(usuario.papel)}
         </p>
       </div>
       
-      {getDashboardByRole(user.role)}
+      {getDashboardByRole(usuario.papel)}
     </div>
   );
 };
 
-export default Dashboard;
+export default PainelControle; // Nome do componente corrigido para corresponder ao nome do arquivo

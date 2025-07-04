@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-import { Button } from '@/componentes/ui/button'; // Componentes de UI não precisam ser traduzidos
+import { Button } from '@/componentes/ui/button';
 import { Input } from '@/componentes/ui/input';
 import { Label } from '@/componentes/ui/label';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/componentes/ui/card';
-import { useAutenticacao } from '@/contextos/ContextoAutenticacao'; // Import atualizado
+import { useAutenticacao } from '@/contextos/ContextoAutenticacao';
 import { useToast } from '@/hooks/use-toast';
+import logo from '@/assets/LOGO ALPHA CONVITES VERTICAL PRETO E VERMELHO.png'; // 1. IMPORTE A SUA LOGO AQUI
 
-// Componente com nome traduzido
 const FormularioLogin = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [enviando, setEnviando] = useState(false);
-  const { entrar } = useAutenticacao(); // Hook com nome traduzido
+  const { entrar } = useAutenticacao();
   const { toast } = useToast();
 
-  // Função com nome traduzido
   const submeterFormulario = async (e: React.FormEvent) => {
     e.preventDefault();
     setEnviando(true);
@@ -41,10 +40,9 @@ const FormularioLogin = () => {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 p-4">
       <div className="w-full max-w-md">
         <div className="text-center mb-8">
-          <div className="mx-auto w-16 h-16 bg-agency-red rounded-full flex items-center justify-center mb-4">
-            <span className="text-white text-2xl font-bold">🎓</span>
-          </div>
-          <h1 className="text-3xl font-bold text-agency-black">AgênciaForm</h1>
+          <img src={logo} alt="ALPHA KONECT Logo" className="mx-auto h-20 w-auto mb-4" />
+
+          <h1 className="text-3xl font-bold text-agency-black">ALPHA KONECT</h1>
           <p className="text-gray-600">Sistema de Gestão de Formaturas</p>
         </div>
 

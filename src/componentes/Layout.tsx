@@ -3,6 +3,7 @@ import { SidebarProvider, SidebarTrigger } from '@/componentes/ui/sidebar';
 import { BarraLateral } from '@/componentes/BarraLateral'; // Import corrigido
 import { useAutenticacao } from '@/contextos/ContextoAutenticacao';
 import FormularioLogin from '@/componentes/FormularioLogin';
+import logo from '@/assets/LOGO ALPHA CONVITES VERTICAL PRETO E VERMELHO.png';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -16,8 +17,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="w-16 h-16 bg-agency-red rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
-            <span className="text-white text-2xl font-bold">🎓</span>
+          <div className="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse">
+            <img src={logo} alt="ALPHA KONECT Logo" className="mx-auto h-10 w-auto mb-4" />
           </div>
           <p className="text-gray-600">Carregando...</p>
         </div>
